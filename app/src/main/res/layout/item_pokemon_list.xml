@@ -43,7 +43,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginEnd="4dp"
             tools:text="12"
-            android:textColor="@color/black"
+            android:textColor="#A1000000"
             android:textSize="24sp">
 
         </TextView>
