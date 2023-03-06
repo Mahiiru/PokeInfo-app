@@ -10,7 +10,7 @@ data class Result(
 )
 
 fun Result.toPokemon() : Pokemon {
-    val idResult = url.substringAfterLast("/").substringBefore("/")
+    val idResult = url.split("/").filter { it.isNotEmpty() }.last()
     return Pokemon(
         id = idResult.toInt(),
         name = name,

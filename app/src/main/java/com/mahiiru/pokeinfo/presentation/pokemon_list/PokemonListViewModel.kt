@@ -1,7 +1,6 @@
 package com.mahiiru.pokeinfo.presentation.pokemon_list
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
