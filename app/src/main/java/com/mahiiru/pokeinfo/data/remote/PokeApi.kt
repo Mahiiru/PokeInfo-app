@@ -8,9 +8,9 @@ import retrofit2.http.Path
 interface PokeApi {
 
     @GET("pokemon?limit=1008")
-    suspend fun getPokemons() : List<PokemonDTO>
+    suspend fun getPokemons() : PokemonDTO
 
     @GET("pokemon/{pokemonId}/")
-    suspend fun getPokemonById(@Path("pokemonId") pokemonId: Int) : List<PokemonDetailsDTO>
+    suspend fun getPokemonById(@Path("pokemonId") pokemonId: Int) : PokemonDetailsDTO
 
 }
