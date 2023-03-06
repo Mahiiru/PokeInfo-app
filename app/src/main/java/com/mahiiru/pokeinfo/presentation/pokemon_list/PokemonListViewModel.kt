@@ -2,6 +2,8 @@ package com.mahiiru.pokeinfo.presentation.pokemon_list
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mahiiru.pokeinfo.common.Resource
@@ -20,8 +22,8 @@ class PokemonListViewModel @Inject constructor(
 ) : ViewModel() {
 
 
-    private val _state = mutableStateOf(PokemonListState())
-    val state : State<PokemonListState> = _state
+    private val _state: MutableLiveData<PokemonListState> = MutableLiveData(PokemonListState())
+    val state: LiveData<PokemonListState> = _state
 
     init {
         getPokemons()

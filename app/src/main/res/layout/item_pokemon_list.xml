@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvItemPokemonList"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="16dp">
+
+    <LinearLayout
+        android:id="@+id/llItemPokemonList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="8dp">
+
+        <ImageView
+            android:id="@+id/ivPokemonList"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/pokemon_sprite" />
+
+        <TextView
+            android:id="@+id/tvHashTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="4dp"
+            android:text="@string/hashtag"
+            android:textStyle="italic"
+            android:textColor="@color/pokeball_red"
+            android:textSize="24sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvPokemonListID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="4dp"
+            tools:text="12"
+            android:textColor="@color/black"
+            android:textSize="24sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvPokemonListName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="16dp"
+            tools:text="Charizard"
+            android:textColor="@color/black"
+            android:textSize="24sp">
+
+        </TextView>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
