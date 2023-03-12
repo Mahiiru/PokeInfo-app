@@ -5,6 +5,6 @@ import com.mahiiru.pokeinfo.domain.model.PokemonDetails
 
 data class PokemonDetailsState(
     val isLoading : Boolean = false,
-    val pokemons : PokemonDetails? = null,
+    val pokemon : PokemonDetails? = null,
     val error : String = ""
 )

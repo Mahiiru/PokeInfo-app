@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mahiiru.pokeinfo.common.Resource
 import com.mahiiru.pokeinfo.domain.use_case.GetPokemonDetailsUseCase
-import com.mahiiru.pokeinfo.domain.use_case.GetPokemonsUseCase
-import com.mahiiru.pokeinfo.presentation.pokemon_list.PokemonListState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -24,12 +22,12 @@ class PokemonDetailsViewModel @Inject constructor(
     private val _state: MutableLiveData<PokemonDetailsState> = MutableLiveData(PokemonDetailsState())
     val state: LiveData<PokemonDetailsState> = _state
 
-    private fun getPokemonDetails(pokemonId : Int) {
+     fun getPokemonDetails(pokemonId : Int) {
 
         getPokemonDetailsUseCase(pokemonId).onEach { result ->
             when (result) {
                 is Resource.Success -> {
-                    _state.value = PokemonDetailsState(pokemons = result.data)
+                    _state.value = PokemonDetailsState(pokemon = result.data)
                 }
                 is Resource.Error -> {
                     _state.value = PokemonDetailsState(error = "An unexpected error occurred.")
