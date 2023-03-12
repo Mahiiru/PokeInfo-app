@@ -11,9 +11,10 @@ class PokemonListViewHolder(itemView : View)
 
         private val binding = ItemPokemonListBinding.bind(itemView)
 
-    fun bind(pokemon : Pokemon){
+    fun bind(pokemon : Pokemon, onItemSelected: (String) -> Unit){
         Picasso.get().load(pokemon.sprite).into(binding.ivPokemonList)
         binding.tvPokemonListID.text = pokemon.id.toString()
         binding.tvPokemonListName.text = pokemon.name.replaceFirstChar { it.uppercaseChar() }
+        binding.root.setOnClickListener { onItemSelected(pokemon.id.toString()) }
     }
 }

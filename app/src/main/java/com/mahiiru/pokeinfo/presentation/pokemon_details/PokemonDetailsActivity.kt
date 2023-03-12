@@ -2,6 +2,7 @@ package com.mahiiru.pokeinfo.presentation.pokemon_details
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.mahiiru.pokeinfo.R
 import com.mahiiru.pokeinfo.common.Constants.EXTRA_ID
 import com.mahiiru.pokeinfo.databinding.ActivityPokemonDetailsBinding
@@ -16,10 +17,10 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
         val id: String = intent.getStringExtra(EXTRA_ID).orEmpty()
 
-        getPokemonDetails(id)
+        getPokemonDetails(id.toInt())
     }
 
-    private fun getPokemonDetails(id: String) {
-        TODO("Not yet implemented")
+    private fun getPokemonDetails(id: Int) {
+        Toast.makeText(this, "loading $id", Toast.LENGTH_SHORT).show()
     }
 }

@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.state.observe(this as LifecycleOwner) {
             if (it.isLoading) Toast.makeText(this, "loading", Toast.LENGTH_SHORT).show()
             if (it.pokemons.isNullOrEmpty().not()) {
-                pokemonListAdapter = PokemonListAdapter(it.pokemons)
+                pokemonListAdapter = PokemonListAdapter(it.pokemons, ::navigateToPokemonDetails)
                 binding.rvPokemons.layoutManager = LinearLayoutManager(this)
                 binding.rvPokemons.adapter = pokemonListAdapter
 
