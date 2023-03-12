@@ -26,7 +26,7 @@ class PokemonDetailsActivity : AppCompatActivity() {
 
     private fun getPokemonDetails(id: Int) {
         viewModel.state.observe(this as LifecycleOwner) {
-            if (it.isLoading) Toast.makeText(this, "loading", Toast.LENGTH_SHORT).show()
+            if (it.isLoading) Toast.makeText(this, "loading $id", Toast.LENGTH_SHORT).show()
             if (it.pokemon != null) {
                 with(it.pokemon) {
 

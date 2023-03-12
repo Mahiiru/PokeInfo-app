@@ -2,4 +2,6 @@
     <string name="app_name">PokeInfo</string>
     <string name="pokemon_sprite">Pokemon Sprite</string>
     <string name="hashtag">#</string>
+    <string name="about">About</string>
+    <string name="base_stats">Base Stats</string>
 </resources>

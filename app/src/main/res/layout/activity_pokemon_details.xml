@@ -4,6 +4,178 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.pokemon_details.PokemonDetailsActivity">
+    tools:context=".presentation.pokemon_details.PokemonDetailsActivity"
+    android:background="@color/pokeball_red">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvPokemonDetails"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/pokeball_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPokemonDetailsSprite"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_marginTop="40dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/pokeball_background">
+
+                <ImageView
+                    android:id="@+id/ivPokemonDetailsSprite"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/pokemon_sprite"
+                    android:scaleType="centerCrop">
+
+                </ImageView>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/cvPokemonDetailsSprite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                android:text="@string/about"
+                android:textColor="@color/black"
+                android:textSize="24sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvPokemonDetailsWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvAbout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvPokemonDetailsHeight"
+                android:layout_marginVertical="16dp"
+                tools:text="Weight"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvPokemonDetailsHeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvAbout"
+                app:layout_constraintStart_toEndOf="@+id/tvPokemonDetailsWeight"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                tools:text="Height"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvBaseStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvPokemonDetailsHeight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                android:text="@string/base_stats"
+                android:textColor="@color/black"
+                android:textSize="24sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvHP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvBaseStats"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                tools:text="HP"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvATK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvHP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                tools:text="ATK"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvDEF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvATK"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                tools:text="DEF"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvSATK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvDEF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                tools:text="SATK"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvSDEF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvSATK"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                tools:text="SDEF"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvSPD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tvSDEF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="16dp"
+                tools:text="SPD"
+                android:textColor="#8A000000"
+                android:textSize="18sp">
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
