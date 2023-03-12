@@ -9,7 +9,10 @@ import com.mahiiru.pokeinfo.R
 import com.mahiiru.pokeinfo.common.Constants.EXTRA_ID
 import com.mahiiru.pokeinfo.databinding.ActivityPokemonDetailsBinding
 import com.mahiiru.pokeinfo.presentation.pokemon_list.PokemonListViewModel
+import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PokemonDetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPokemonDetailsBinding
@@ -29,7 +32,19 @@ class PokemonDetailsActivity : AppCompatActivity() {
             if (it.isLoading) Toast.makeText(this, "loading $id", Toast.LENGTH_SHORT).show()
             if (it.pokemon != null) {
                 with(it.pokemon) {
-
+                    Picasso.get().load(it.pokemon.sprite).into(binding.ivPokemonDetailsSprite)
+                    binding.tvPokemonDetailsWeight.text = "Weight = ${it.pokemon.weight}"
+                    binding.tvPokemonDetailsHeight.text = "Height = ${it.pokemon.height}"
+                    it.pokemon.stats.forEach { stat ->
+                        when(stat.name){
+                            "hp" -> binding.tvHP.text = "HP = ${stat.baseStat}"
+                            "attack" -> binding.tvATK.text = "ATK = ${stat.baseStat}"
+                            "defense" -> binding.tvDEF.text = "DEF = ${stat.baseStat}"
+                            "special-attack" -> binding.tvSATK.text = "SATK = ${stat.baseStat}"
+                            "special-defense" -> binding.tvSDEF.text = "SDEF = ${stat.baseStat}"
+                            "speed" -> binding.tvSPD.text = "SPD = ${stat.baseStat}"
+                        }
+                    }
                 }
 
             }

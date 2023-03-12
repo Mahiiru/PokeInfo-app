@@ -29,8 +29,8 @@ fun PokemonDetailsDTO.toPokemonDetails() : PokemonDetails = PokemonDetails(
     id = id,
     name = name,
     sprite = SPRITE_START_URL + id.toString() + SPRITE_END_URL,
-    height = height.toDouble() / 100,
-    weight = weight.toDouble() / 100,
+    height = height.toDouble() / 10,
+    weight = weight.toDouble() / 10,
     types = types.map { it.type.name },
     stats = stats.map { it.toPokemonStats() }
 )
