@@ -1,5 +1,9 @@
 package com.mahiiru.pokeinfo.data.remote.dto
 
+import com.mahiiru.pokeinfo.common.Constants.SPRITE_END_URL
+import com.mahiiru.pokeinfo.common.Constants.SPRITE_START_URL
+import com.mahiiru.pokeinfo.domain.model.PokemonDetails
+
 data class PokemonDetailsDTO(
     val abilities: List<Ability>,
     val base_experience: Int,
@@ -19,4 +23,14 @@ data class PokemonDetailsDTO(
     val stats: List<Stat>,
     val types: List<Type>,
     val weight: Int
+)
+
+fun PokemonDetailsDTO.toPokemonDetails() : PokemonDetails = PokemonDetails(
+    id = id,
+    name = name,
+    sprite = SPRITE_START_URL + id.toString() + SPRITE_END_URL,
+    height = height.toDouble() / 100,
+    weight = weight.toDouble() / 100,
+    types = types.map { it.type.name },
+    stats = stats.map { it.toPokemonStats() }
 )
